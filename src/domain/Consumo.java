@@ -14,31 +14,15 @@ public class Consumo {
         this.dataConsumo = dataConsumo;
     }
 
-    public Item getItem(){
-        return this.item;
-    }
-    public void setItem(Item item){
-        this.item = item;
-    }
+    public Item getItem(){ return this.item; }
+    public void setItem(Item item){ this.item = item; }
 
-    public Reserva getReserva(){
-        return this.reserva;
-    }
-    public void setReserva(Reserva reserva) {
-        this.reserva = reserva;
-    }
+    public Reserva getReserva(){ return this.reserva; }
+    public void setReserva(Reserva reserva) { this.reserva = reserva; }
 
-    public int getQuantidadeSolicitada(){
-        return this.quantidadeSolicitada;
-    }
-    public void setQuantidadeSolicitada(int quantidadeSolicitada){
-        this.quantidadeSolicitada = quantidadeSolicitada;
-    }
+    public int getQuantidadeSolicitada(){ return this.quantidadeSolicitada; }
+    public void setQuantidadeSolicitada(int quantidadeSolicitada){ this.quantidadeSolicitada = quantidadeSolicitada; }
  
-    public Date getDataConsumo(){
-        return this.dataConsumo;
-    }
-    public void setDataConsumo(Date dataConsumo){
-        this.dataConsumo = dataConsumo;
-    }
+    public Date getDataConsumo(){ return this.dataConsumo; }
+    public void setDataConsumo(Date dataConsumo){ this.dataConsumo = dataConsumo; }
 }

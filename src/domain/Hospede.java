@@ -7,14 +7,6 @@ public class Hospede extends Pessoa {
         this.enderecoCompleto = enderecoCompleto;
     }
 
-    public String getEnderecoCompleto(){
-        return this.enderecoCompleto;
-    }
-    public void setEnderecoCompleto(String enderecoCompleto) {
-        this.enderecoCompleto = enderecoCompleto;
-    }
-
-    public boolean cadastrar(Hospede h) {
-        return true;
-    }
+    public String getEnderecoCompleto(){ return this.enderecoCompleto; }
+    public void setEnderecoCompleto(String enderecoCompleto) { this.enderecoCompleto = enderecoCompleto; }
 }
