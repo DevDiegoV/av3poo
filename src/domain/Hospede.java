@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-
+package domain;
 public class Hospede extends Pessoa {
     private String enderecoCompleto;
 
@@ -17,18 +16,5 @@ public class Hospede extends Pessoa {
 
     public boolean cadastrar(Hospede h) {
         return true;
-    }
-
-    public boolean editar(Hospede h) {
-        return true;
-    }
-
-    public Hospede consultar(Hospede h) {
-        return h;
-    }
-
-    public ArrayList<Hospede> listar(Hospede h) {
-        ArrayList<Hospede> list = new ArrayList<Hospede>();
-        return list;
     }
 }

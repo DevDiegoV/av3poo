@@ -1,8 +1,8 @@
-import java.util.ArrayList;
+package domain;
 import java.util.Date;
 
 public class Reserva {
-    private int codigo;
+    private int id;
     private Hospede hospede;
     private Quarto quarto;
     private Funcionario funcionarioReserva;
@@ -14,8 +14,8 @@ public class Reserva {
     private double valorReserva;
     private double valorPago;
 
-    public Reserva(int codigo, Hospede hospede, Quarto quarto, Funcionario funcionarioReserva, Funcionario funcionarioFechamento, Date dataEntradaReserva, Date dataSaidaReserva, Date dataCheckin, Date dataCheckout, double valorReserva, double valorPago) {
-        this.codigo = codigo;
+    public Reserva(int id, Hospede hospede, Quarto quarto, Funcionario funcionarioReserva, Funcionario funcionarioFechamento, Date dataEntradaReserva, Date dataSaidaReserva, Date dataCheckin, Date dataCheckout, double valorReserva, double valorPago) {
+        this.id = id;
         this.hospede = hospede;
         this.quarto = quarto;
         this.funcionarioReserva = funcionarioReserva;
@@ -28,11 +28,11 @@ public class Reserva {
         this.valorPago = valorPago;
     }
 
-    public int getCodigo(){
-        return this.codigo;
+    public int getId(){
+        return this.id;
     }
-    public void setCodigo(int codigo){
-        this.codigo = codigo;
+    public void setId(int id){
+        this.id = id;
     }
 
     public Hospede getHospede(){
@@ -103,23 +103,6 @@ public class Reserva {
     }
     public void setValorPago(double valorPago){
         this.valorPago = valorPago;
-    }
-
-    public boolean cadastrar(Reserva r) {
-        return true;
-    }
-
-    public boolean editar(Reserva r) {
-        return true;
-    }
-
-    public Reserva consultar(Reserva r) {
-        return r;
-    }
-
-    public ArrayList<Reserva> listar(Reserva r) {
-        ArrayList<Reserva> list = new ArrayList<Reserva>();
-        return list;
     }
 
     public void pagarReserva(int valor) {

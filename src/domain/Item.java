@@ -1,21 +1,20 @@
-import java.util.ArrayList;
-
+package domain;
 public class Item {
-    private int codigo;
+    private int id;
     private String descricao;
     private double valor;
 
-    public Item(int codigo, String descricao, double valor) {
-        this.codigo = codigo;
+    public Item(int id, String descricao, double valor) {
+        this.id = id;
         this.descricao = descricao;
         this.valor = valor;
     }
 
-    public int getCodigo() {
-        return this.codigo;
+    public int getId() {
+        return this.id;
     }
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDescricao() {
@@ -34,18 +33,5 @@ public class Item {
 
     public boolean cadastrar(Item i) {
         return true;
-    }
-
-    public boolean editar(Item i) {
-        return true;
-    }
-
-    public Item consultar(Item i) {
-        return i;
-    }
-
-    public ArrayList<Item> listar(Item i) {
-        ArrayList<Item> list = new ArrayList<Item>();
-        return list;
     }
 }

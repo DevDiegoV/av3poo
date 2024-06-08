@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+package domain;
 import java.util.Date;
 
 public class ConsumoServico {
@@ -44,18 +44,5 @@ public class ConsumoServico {
 
     public boolean cadastrar(ConsumoServico cs) {
         return true;
-    }
-
-    public boolean editar(ConsumoServico cs) {
-        return true;
-    }
-
-    public ConsumoServico consultar(ConsumoServico cs) {
-        return cs;
-    }
-
-    public ArrayList<ConsumoServico> listar(ConsumoServico cs) {
-        ArrayList<ConsumoServico> list = new ArrayList<ConsumoServico>();
-        return list;
     }
 }

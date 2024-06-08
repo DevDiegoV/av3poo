@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-
+package domain;
 public class CategoriaItem {
     private Item item;
     private Categoria categoria;
@@ -30,22 +29,5 @@ public class CategoriaItem {
     }
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
-    }
-
-     public boolean cadastrar(CategoriaItem ci) {
-        return true;
-    }
-
-    public boolean editar(CategoriaItem ci) {
-        return true;
-    }
-
-    public CategoriaItem consultar(CategoriaItem ci) {
-        return ci;
-    }
-
-    public ArrayList<CategoriaItem> listar(CategoriaItem ci) {
-        ArrayList<CategoriaItem> list = new ArrayList<CategoriaItem>();
-        return list;
     }
 }
