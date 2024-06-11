@@ -1,24 +1,25 @@
 package dao;
-import java.util.ArrayList;
 
 import domain.Consumo;
 
-public class ConsumoDAO {
+public class ConsumoDAO extends GenericDAO<Consumo> {
     
-    public boolean cadastrar(Consumo c) {
-        return true;
+    public ConsumoDAO(String filePath) {
+        super(filePath);
     }
 
-    public boolean editar(Consumo c) {
-        return true;
+    @Override
+    protected Consumo fromString(String line) {
+        return Consumo.fromString(line);
     }
 
-    public Consumo consultar(Consumo c) {
-        return c;
+    @Override
+    protected String toString(Consumo consumo) {
+        return consumo.toString();
     }
-
-    public ArrayList<Consumo> listar(Consumo c) {
-        ArrayList<Consumo> lista = new ArrayList<Consumo>();
-        return lista;
+    
+    @Override
+    protected String getId(Consumo consumo) {
+        return consumo.getId();
     }
 }

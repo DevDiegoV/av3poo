@@ -28,6 +28,10 @@ public class Reserva {
         this.valorPago = valorPago;
     }
 
+    public Reserva(String id) {
+        this.id = id;
+    }
+
     public String getId(){ return this.id; }
     public void setId(String id){ this.id = id; }
 
@@ -63,5 +67,40 @@ public class Reserva {
 
     public void pagarReserva(double valor) {
 
+    }
+
+    @Override
+    public String toString() {
+        return id + "," + hospede + "," + quarto + "," + funcionarioReserva + "," + funcionarioFechamento + "," + dataEntradaReserva + "," + dataSaidaReserva + "," + dataCheckin + "," + dataCheckout + "," + valorReserva + "," + valorPago;
+    }
+
+    public static Reserva fromString(String str) {
+        String[] parts = str.split(",");
+        String id = parts[0];
+        Hospede hospede = Hospede.fromString(parts[1]); 
+        Quarto quarto = Quarto.fromString(parts[2]); 
+        Funcionario funcionarioReserva = Funcionario.fromString(parts[3]);
+        Funcionario funcionarioFechamento = Funcionario.fromString(parts[4]);
+        Date dataEntradaReserva = new Date();
+        Date dataSaidaReserva = new Date();
+        Date dataCheckin = new Date();
+        Date dataCheckout = new Date();
+        double valorReserva = Double.parseDouble(parts[9]);
+        double valorPago = Double.parseDouble(parts[10]);
+        
+        return new Reserva(id, hospede, quarto, funcionarioReserva, funcionarioFechamento, dataEntradaReserva, dataSaidaReserva, dataCheckin, dataCheckout, valorReserva, valorPago);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Reserva reserva = (Reserva) obj;
+        return id.equals(reserva.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
     }
 }

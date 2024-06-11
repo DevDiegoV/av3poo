@@ -1,4 +1,5 @@
 package domain;
+
 public class Servico {
     private String id;
     private String descricao;
@@ -10,6 +11,10 @@ public class Servico {
         this.valor = valor;
     }
 
+    public Servico(String id) {
+        this.id = id;
+    }
+
     public String getId() { return this.id; }
     public void setId(String id) { this.id = id; }
 
@@ -18,4 +23,30 @@ public class Servico {
 
     public double getValor() { return this.valor; }
     public void setValor(double valor) { this.valor = valor; }
+
+    @Override
+    public String toString() {
+        return id + "," + descricao + "," + valor;
+    }
+
+    public static Servico fromString(String str) {
+        String[] parts = str.split(",");
+        String id = parts[0];
+        String descricao = parts[1];
+        double valor = Double.parseDouble(parts[2]);
+        return new Servico(id, descricao, valor);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Servico servico = (Servico) obj;
+        return id.equals(servico.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
+    }
 }

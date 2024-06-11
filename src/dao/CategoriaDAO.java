@@ -1,24 +1,25 @@
 package dao;
-import java.util.ArrayList;
 
 import domain.Categoria;
 
-public class CategoriaDAO {
+public class CategoriaDAO extends GenericDAO<Categoria>{
   
-    public boolean cadastrar(Categoria c) {
-        return true;
-    }  
-
-    public boolean editar(Categoria c) {
-        return true;
-    } 
-
-    public Categoria consultar(Categoria c) {
-        return c;
+    public CategoriaDAO(String filePath) {
+        super(filePath);
     }
 
-    public ArrayList<Categoria> listar(Categoria c) {
-        ArrayList<Categoria> lista = new ArrayList<Categoria>();
-        return lista;
+    @Override
+    protected Categoria fromString(String line) {
+        return Categoria.fromString(line);
+    }
+
+    @Override
+    protected String toString(Categoria categoria) {
+        return categoria.toString();
+    }
+
+    @Override
+    protected String getId(Categoria categoria) {
+        return categoria.getId();
     }
 }

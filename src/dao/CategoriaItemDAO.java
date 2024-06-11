@@ -1,24 +1,24 @@
 package dao;
-import java.util.ArrayList;
 
 import domain.CategoriaItem;
 
-public class CategoriaItemDAO {
+public class CategoriaItemDAO extends GenericDAO<CategoriaItem> {
+    public CategoriaItemDAO(String filePath) {
+        super(filePath);
+    }
+
+    @Override
+    protected CategoriaItem fromString(String line) {
+        return CategoriaItem.fromString(line);
+    }
+
+    @Override
+    protected String toString(CategoriaItem categoriaItem) {
+        return categoriaItem.toString();
+    }
     
-    public boolean cadastrar(CategoriaItem ci) {
-        return true;
-    }
-
-    public boolean editar(CategoriaItem ci) {
-        return true;
-    }
-
-    public CategoriaItem consultar(CategoriaItem ci) {
-        return ci;
-    }
-
-    public ArrayList<CategoriaItem> listar(CategoriaItem ci) {
-        ArrayList<CategoriaItem> lista = new ArrayList<CategoriaItem>();
-        return lista;
+    @Override
+    protected String getId(CategoriaItem categoriaItem) {
+        return categoriaItem.getId();
     }
 }

@@ -1,24 +1,25 @@
 package dao;
-import java.util.ArrayList;
 
 import domain.Hospede;
 
-public class HospedeDAO {
+public class HospedeDAO extends GenericDAO<Hospede> {
     
-    public boolean cadastrar(Hospede h) {
-        return true;
+    public HospedeDAO(String filePath) {
+        super(filePath);
     }
 
-    public boolean editar(Hospede h) {
-        return true;
+    @Override
+    protected Hospede fromString(String line) {
+        return Hospede.fromString(line);
     }
 
-    public Hospede consultar(Hospede h) {
-        return h;
+    @Override
+    protected String toString(Hospede hospede) {
+        return hospede.toString();
     }
-
-    public ArrayList<Hospede> listar(Hospede h) {
-        ArrayList<Hospede> lista = new ArrayList<Hospede>();
-        return lista;
+    
+    @Override
+    protected String getId(Hospede hospede) {
+        return hospede.getId();
     }
 }

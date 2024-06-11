@@ -2,20 +2,24 @@ package domain;
 
 public class Quarto {
     private String id;
-    private String categoria;
+    private Categoria categoria;
     private String status;
 
-    public Quarto(String id, String categoria, String status) {
+    public Quarto(String id, Categoria categoria, String status) {
         this.id = id;
         this.categoria = categoria;
         this.status = status;
     }
 
-    public String getId() { return id; }
-    public String getCategoria() { return categoria; }
+    public Quarto(String id) {
+        this.id = id;
+    }
 
+    public String getId() { return id; }
     public void setId(String id) { this.id = id; }
-    public void setCategoria(String categoria) { this.categoria = categoria; }
+
+    public Categoria getCategoria() { return categoria; }
+    public void setCategoria(Categoria categoria) { this.categoria = categoria; }
 
     public String getStatus() { return this.status; }
     public void setStatus(String status) { this.status = status; }
@@ -27,7 +31,10 @@ public class Quarto {
 
     public static Quarto fromString(String str) {
         String[] parts = str.split(",");
-        return new Quarto(parts[0], parts[1], parts[2]);
+        String id = parts[0];
+        Categoria categoria = new Categoria(parts[1]);
+        String status = parts[2];
+        return new Quarto(id, categoria, status);
     }
 
     @Override

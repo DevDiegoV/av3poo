@@ -1,24 +1,25 @@
 package dao;
-import java.util.ArrayList;
 
 import domain.Funcionario;
 
-public class FuncionarioDAO {
+public class FuncionarioDAO extends GenericDAO<Funcionario> {
     
-    public boolean cadastrar(Funcionario f) {
-        return true;
+    public FuncionarioDAO(String filePath) {
+        super(filePath);
     }
 
-    public boolean editar(Funcionario f)  {
-        return true;
+    @Override
+    protected Funcionario fromString(String line) {
+        return Funcionario.fromString(line);
     }
 
-    public Funcionario consultar(Funcionario f) {
-        return f;
+    @Override
+    protected String toString(Funcionario funcionario) {
+        return funcionario.toString();
     }
-
-    public ArrayList<Funcionario> listar(Funcionario f) {
-        ArrayList<Funcionario> lista = new ArrayList<Funcionario>();
-        return lista;
+    
+    @Override
+    protected String getId(Funcionario funcionario) {
+        return funcionario.getId();
     }
 }

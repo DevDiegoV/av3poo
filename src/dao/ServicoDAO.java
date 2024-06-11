@@ -1,24 +1,25 @@
 package dao;
-import java.util.ArrayList;
 
 import domain.Servico;
 
-public class ServicoDAO {
+public class ServicoDAO extends GenericDAO<Servico> {
     
-    public boolean cadastrar(Servico s) {
-        return true;
+    public ServicoDAO(String filePath) {
+        super(filePath);
     }
 
-    public boolean editar(Servico s) {
-        return true;
+    @Override
+    protected Servico fromString(String line) {
+        return Servico.fromString(line);
     }
 
-    public Servico consultar(Servico s) {
-        return s;
+    @Override
+    protected String toString(Servico servico) {
+        return servico.toString();
     }
-
-    public ArrayList<Servico> listar(Servico s) {
-        ArrayList<Servico> lista = new ArrayList<Servico>();
-        return lista;
+    
+    @Override
+    protected String getId(Servico servico) {
+        return servico.getId();
     }
 }

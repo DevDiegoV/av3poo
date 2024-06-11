@@ -1,24 +1,25 @@
 package dao;
-import java.util.ArrayList;
 
 import domain.Reserva;
 
-public class ReservaDAO {
+public class ReservaDAO extends GenericDAO<Reserva> {
     
-    public boolean cadastrar(Reserva r) {
-        return true;
+    public ReservaDAO(String filePath) {
+        super(filePath);
     }
 
-    public boolean editar(Reserva r) {
-        return true;
+    @Override
+    protected Reserva fromString(String line) {
+        return Reserva.fromString(line);
     }
 
-    public Reserva consultar(Reserva r) {
-        return r;
+    @Override
+    protected String toString(Reserva reserva) {
+        return reserva.toString();
     }
-
-    public ArrayList<Reserva> listar(Reserva r) {
-        ArrayList<Reserva> lista = new ArrayList<Reserva>();
-        return lista;
+    
+    @Override
+    protected String getId(Reserva reserva) {
+        return reserva.getId();
     }
 }
